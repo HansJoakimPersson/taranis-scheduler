@@ -23,8 +23,8 @@ uv venv
 
 ## Easy Mode
 
-Asumes, your are running a tmux session with 3 taranis-ai windows already, 
-creates 2 additional windows for tailwind & flask.
+Asumes, your are running a tmux session with taranis-ai windows already (named 'taranis'),   
+creates 2 additional tmux windows for tailwind & flask.
 
 ```bash
 ./start_dev.sh
