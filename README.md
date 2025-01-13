@@ -21,6 +21,17 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 uv venv
 ```
 
+## Easy Mode
+
+Asumes, your are running a tmux session with taranis-ai windows already (named 'taranis'),   
+creates 2 additional tmux windows for tailwind & flask.
+
+```bash
+./start_dev.sh
+```
+
+## Hard Mode
+
 Source venv and install dependencies
 
 ```bash
@@ -57,7 +68,7 @@ Run the Flask development server:
 flask run
 ```
 
-This will start the Flask server and run the scheduler service at `http://localhost:5000`.
+This will start the Flask server and run the scheduler service at `http://localhost:5001`.
 
 ---
 
@@ -86,14 +97,14 @@ Configuration is handled via environment variables.
 
 ### Required Environment Variables
 
-- **`SQLALCHEMY_DATABASE_URI`**: The connection string to your PostgreSQL database.
-  - Example: `postgresql://username:password@localhost:5432/your_database`
-  
 - **`FLASK_ENV`**: Set to `development` or `production`.
   - Example: `export FLASK_ENV=development`
 
 - **`FLASK_APP`**: Set this to the name of your app (e.g., `scheduler`).
   - Example: `export FLASK_APP=scheduler`
 
-- **`JWT_SECRET_KEY`**: The secret key for signing JWT tokens.
-  - Example: `export JWT_SECRET_KEY=your-secret-key`
+- **`TARANIS_CORE_URL`**: The URL from the core service  
+  - Example: `export TARANIS_CORE_URL="http://local.taranis.ai/api"`
+
+- **`APPLICATION_ROOT`**
+  - Example: `export APPLICATION_ROOT="/scheduler"`
